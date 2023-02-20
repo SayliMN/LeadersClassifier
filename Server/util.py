@@ -6,8 +6,6 @@ import base64
 import os
 from wavelet import waveTrans
 
-<<<<<<< HEAD
-=======
 
 __class_name_to_number = {}
 __class_number_to_name = {}
@@ -91,4 +89,3 @@ if __name__ == '__main__':
     load_saved_artifacts()
 
     print(classify_image(get_base64_test_image_for_anand(), None))
->>>>>>> 6f70a4e (add UI section, rerun LeadersClassifier.py file, created an API in server.py file and added functions in util file in Server)
