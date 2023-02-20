@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ======= Bootstrap CSS ========== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- ======= Drag and drop CSS ========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
+    <!-- <link rel="stylesheet" href="./dropzone.min.css"> -->
+    <!-- ======= CSS ========== -->
+    <link rel="stylesheet" href="./app.css">
+    <title>Leaders Classifier</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand header__title" href="#">Leaders Classifier</a>
+    </nav>
+    <div>
+        <div class="instructions d-flex flex-column">
+            <h4 class="instructions__title">Please follow the instructions mentioned below</h4>
+            <span class="instructions__subtitle">1) Please select the image for classification</span>
+            <span class="instructions__subtitle">2) Drag the images in the empty dashed-box and click on the "classify" button</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col card-wrapper" data-leader="anand_mahindra">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto leader__image">
+                        <img class="w-100 h-100" src="./images/anand_mahindra3.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <span class="card-title">Anand Mahindra</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-leader="elon_musk">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto leader__image">
+                        <img class="w-100 h-100" src="./images/elon_musk9.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <span class="card-title">Elon Musk</span>
+                    </div>
+                </div>
+            </div>         
+            <div class="col card-wrapper" data-leader="gautam_adani">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto leader__image">
+                        <img class="w-100 h-100" src="./images/Gautam_adani6.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <span class="card-title">Gautam Adani</span>
+                    </div>
+                </div>
+            </div>         
+            <div class="col card-wrapper" data-leader="jeff_bezos">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto leader__image">
+                        <img class="w-100 h-100" src="./images/jeff_bezos4.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <span class="card-title">Jeff Bezos</span>
+                    </div>
+                </div>
+            </div>         
+            <div class="col card-wrapper" data-leader="ratan_tata">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto leader__image">
+                        <img class="w-100 h-100" src="./images/ratan_tata16.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <span class="card-title">Ratan Tata</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop the file here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Leaders</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Anand Mahindra</td>
+                            <td id="score_anand_mahindra"></td>
+                        </tr>
+                        <tr>
+                            <td>Elon Musk</td>
+                            <td id="score_elon_musk"></td>
+                        </tr>
+                        <tr>
+                            <td>Gautam Adani</td>
+                            <td id="score_gautam_adani"></td>
+                        </tr>
+                        <tr>
+                            <td>Jeff Bezos</td>
+                            <td id="score_jeff_bezos"></td>
+                        </tr>
+                        <tr>
+                            <td>Ratan Tata</td>
+                            <td id="score_ratan_tata"></td>
+                        </tr>
+                </table>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>

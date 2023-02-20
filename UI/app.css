@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@400;500;600&display=swap');
+:root{
+
+    /*========== Font and typography ==========*/
+    --body-font:'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --h4-font-size: 1.1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+}
+
+body{
+    font-family: var(--body-font);
+}
+
+
+/* ============ Header ================ */
+.header__title{
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+}
+
+.header__subtitle{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-normal);
+}
+
+
+/* ============ Instructions ================ */
+.instructions{
+    margin: 1rem ;
+}
+
+.instructions__title{
+    font-size: var(--h4-font-size);
+}
+
+.instructions__subtitle{
+    font-size: var(--normal-font-size);
+}
+
+
+/* ============ Instructions ================ */
+.card-wrapper {
+    margin: 5% 0;
+}
+
+.card-body{
+    margin: .2rem;
+}
+
+.leader__image {
+  width: 11vw; /* note i used vw not px for better responsive */
+  height: 11vw;
+}
+
+.leader__image img {
+  object-fit: cover;
+}
+
+.card-title {
+  letter-spacing: 1.1px;
+  font-family: var(--body-font);
+  font-weight: var(--font-medium);
+  /* font-size: var(--h4-font-size); */
+}
+
+.card-text {
+  font-family: MerriweatherRegular;
+  font-size: 22px;
+  line-height: initial;
+}
+
+.dropzone {
+  border-style: dashed;
+}
+
+
+.error {
+  font-family: MerriweatherRegular;
+  font-size: 30px;
+  line-height: initial;
+  color: blue;
+  text-align: center;
+}
+
+#classTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#classTable td, #classTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#classTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
