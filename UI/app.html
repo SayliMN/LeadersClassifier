@@ -15,14 +15,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light justify-content-center">
+    <nav class="navbar justify-content-center">
         <a class="navbar-brand header__title" href="#">Leaders Classifier</a>
     </nav>
     <div>
         <div class="instructions d-flex flex-column">
             <h4 class="instructions__title">Please follow the instructions mentioned below</h4>
             <span class="instructions__subtitle">1) Please select the image for classification</span>
-            <span class="instructions__subtitle">2) Drag the images in the empty dashed-box and click on the "classify" button</span>
+            <span class="instructions__subtitle">2) Drag the image in the empty dashed-box and click on the "classify" button</span>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
             <div class="col card-wrapper" data-leader="anand_mahindra">
                 <div class="card border-0">
                     <div class="position-relative rounded overflow-hidden mx-auto leader__image">
-                        <img class="w-100 h-100" src="./images/anand_mahindra3.png" alt="Card image cap">
+                        <img class="w-100 h-100" src="./images/anand_mahindra.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-2">
                         <span class="card-title">Anand Mahindra</span>
@@ -41,27 +41,27 @@
             <div class="col card-wrapper" data-leader="elon_musk">
                 <div class="card border-0">
                     <div class="position-relative rounded overflow-hidden mx-auto leader__image">
-                        <img class="w-100 h-100" src="./images/elon_musk9.png" alt="Card image cap">
+                        <img class="w-100 h-100" src="./images/elon_musk.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-2">
                         <span class="card-title">Elon Musk</span>
                     </div>
                 </div>
             </div>         
-            <div class="col card-wrapper" data-leader="gautam_adani">
+            <div class="col card-wrapper" data-leader="Gautam_adani">
                 <div class="card border-0">
                     <div class="position-relative rounded overflow-hidden mx-auto leader__image">
-                        <img class="w-100 h-100" src="./images/Gautam_adani6.png" alt="Card image cap">
+                        <img class="w-100 h-100" src="./images/Adani3.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-2">
                         <span class="card-title">Gautam Adani</span>
                     </div>
                 </div>
-            </div>         
+            </div>
             <div class="col card-wrapper" data-leader="jeff_bezos">
                 <div class="card border-0">
                     <div class="position-relative rounded overflow-hidden mx-auto leader__image">
-                        <img class="w-100 h-100" src="./images/jeff_bezos4.png" alt="Card image cap">
+                        <img class="w-100 h-100" src="./images/jeff_bezos.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-2">
                         <span class="card-title">Jeff Bezos</span>
@@ -71,7 +71,7 @@
             <div class="col card-wrapper" data-leader="ratan_tata">
                 <div class="card border-0">
                     <div class="position-relative rounded overflow-hidden mx-auto leader__image">
-                        <img class="w-100 h-100" src="./images/ratan_tata16.png" alt="Card image cap">
+                        <img class="w-100 h-100" src="./images/ratan_tata.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-2">
                         <span class="card-title">Ratan Tata</span>
@@ -94,13 +94,13 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-3 mx-auto">
-                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                        <button id="submitBtn" type="button" class="btn">Classify</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-sm-8 error" id="error" >
-                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>
             </div>
 
             <div class="col-sm-4" id="resultHolder">
@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <td>Gautam Adani</td>
-                            <td id="score_gautam_adani"></td>
+                            <td id="score_Gautam_adani"></td>
                         </tr>
                         <tr>
                             <td>Jeff Bezos</td>
@@ -133,7 +133,7 @@
                         </tr>
                 </table>
             </div>
-            
+
         </div>
 
     </div>

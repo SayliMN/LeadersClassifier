@@ -17,6 +17,16 @@
     --font-normal: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
+
+    /*========== Font Size ==========*/
+    --font-size-table: .9rem;
+
+    /*========== HSL color ==========*/
+    --hue-color: 191;
+    --table-color: hsl(var(--hue-color), 66%, 45%);
+    --table-font-color: hsl(var(--hue-color), 66%, 100%);
+    --title-font-color: hsl(var(--hue-color), 66%, 33%);
+
 }
 
 body{
@@ -28,11 +38,20 @@ body{
 .header__title{
     font-size: var(--h1-font-size);
     font-weight: var(--font-medium);
+    color: var(--title-font-color);
+}
+
+.header__title:hover {
+    color: hsl(var(--hue-color), 76%, 24%);
 }
 
 .header__subtitle{
     font-size: var(--h3-font-size);
     font-weight: var(--font-normal);
+}
+
+.navbar {
+    background-color: hsl(var(--hue-color), 19%, 88%);
 }
 
 
@@ -60,8 +79,8 @@ body{
 }
 
 .leader__image {
-  width: 11vw; /* note i used vw not px for better responsive */
-  height: 11vw;
+  width: 13vw; /* note i used vw not px for better responsive */
+  height: 13vw;
 }
 
 .leader__image img {
@@ -75,6 +94,10 @@ body{
   /* font-size: var(--h4-font-size); */
 }
 
+.card-title:hover {
+    font-color: hsl(var(--hue-color), 76%, 24%);
+}
+
 .card-text {
   font-family: MerriweatherRegular;
   font-size: 22px;
@@ -85,30 +108,46 @@ body{
   border-style: dashed;
 }
 
+/* ============ Button ================ */
+.btn {
+    background-color: var(--table-color);
+    color: var(--table-font-color);
+
+}
+
 
 .error {
-  font-family: MerriweatherRegular;
+  font-family: var(--body-font);
   font-size: 30px;
   line-height: initial;
   color: blue;
   text-align: center;
 }
 
+/* ============ Button ================ */
 #classTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: var(--body-font);
   border-collapse: collapse;
-  width: 100%;
+  width: 300px;
+
 }
 
 #classTable td, #classTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    padding: 8px;
+
+}
+
+#classTable td {
+    font-size: var(--font-size-table);
+    font-family: var(--body-font);
 }
 
 #classTable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: var(--table-color);
   color: white;
 }

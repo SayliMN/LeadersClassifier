@@ -7,8 +7,8 @@ import os
 from wavelet import waveTrans
 
 
-__class_name_to_number = {}
-__class_number_to_name = {}
+__label_to_number = {}
+__number_to_label = {}
 
 __model = None
 
@@ -27,18 +27,22 @@ def classify_image(image_base64_data, file_path=None):
 
         # predict expects 2D array (in here multiple images), that's why the final array has been reshaped to 1D
         final = new_img.reshape(1, len_img_arr).astype(float)
-        result.append(__model.predict(final)[0])
+        result.append({
+            'class': number_to_label(__model.predict(final)[0]),
+            'class_probability': np.round(__model.predict_proba(final)*100, 2).tolist()[0],
+            'class_dictionary': __label_to_number
+        })
     return result
 
 
 def load_saved_artifacts():
     print("Loading saved artifacts...start")
-    global __class_name_to_number
-    global __class_number_to_name
+    global __label_to_number
+    global __number_to_label
 
     with open("./Artifacts/labels_dict.json", 'r') as f:
-        __class_name_to_number = json.load(f)
-        __class_number_to_name = {v: k for k, v in __class_name_to_number.items()}
+        __label_to_number = json.load(f)
+        __number_to_label = {v: k for k, v in __label_to_number.items()}
 
     global __model
     if __model is None:
@@ -46,6 +50,10 @@ def load_saved_artifacts():
             __model = joblib.load(f)
 
     print("Loading saved artifacts...done")
+
+
+def number_to_label(class_num):
+    return __number_to_label[class_num]
 
 
 # Converting a base64 string into opencv image
@@ -67,7 +75,7 @@ def get_a_cropped_img_if_both_eyes(image_path, image_base64_data):
         img = get_cv2_image_from_base64_string(image_base64_data)
 
     g_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces_loc = face_clf.detectMultiScale(g_img, 1.2, 3)
+    faces_loc = face_clf.detectMultiScale(g_img, 1.3, 5)
 
     cropped_faces = []
     for (x, y, w, h) in faces_loc:
@@ -76,7 +84,7 @@ def get_a_cropped_img_if_both_eyes(image_path, image_base64_data):
         eyes_loc = eye_clf.detectMultiScale(g_face)
         if len(eyes_loc) >= 2:
             cropped_faces.append(c_face)
-        return cropped_faces
+    return cropped_faces
 
 
 # to get test img as a string
@@ -88,4 +96,5 @@ def get_base64_test_image_for_anand():
 if __name__ == '__main__':
     load_saved_artifacts()
 
-    print(classify_image(get_base64_test_image_for_anand(), None))
+    # print(classify_image(get_base64_test_image_for_anand(), None))
+    print(classify_image(None, "./Test_images/8669a89734e438ef18a9b72b34a19a27de-the-rock-jeff-bezos.jpg"))
