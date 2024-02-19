@@ -32,7 +32,7 @@ function init() {
                 $("#error").show();
                 return;
             }
-            let players = ["lionel_messi", "maria_sharapova", "roger_federer", "serena_williams", "virat_kohli"];
+            let players = ["anand_mahindra", "elon_musk", "gautam_adani", "jeff_bezos", "ratan_tata"];
 
             let match = null;
             let bestScore = -1;
